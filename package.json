@@ -1,7 +1,8 @@
 {
   "name": "react-1cv8-web-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React components for 1cv8 WebApp",
+  "type": "module",
   "scripts": {
     "test": "NODE_ENV=test jest",
     "build": "rm -rf ./lib/*; microbundle build --sourcemap=false",
