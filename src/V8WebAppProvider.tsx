@@ -1,8 +1,7 @@
-import { PropsWithChildren, ReactElement } from 'react';
-import V8Proxy from './core/V8Proxy';
 import React from 'react';
+import V8Proxy from './core/V8Proxy';
 
-const V8WebAppProvider = ({ children }: PropsWithChildren): ReactElement => {
+const V8WebAppProvider = ({ children }: React.PropsWithChildren): React.ReactElement => {
   
   (window as any).V8Proxy = V8Proxy
   

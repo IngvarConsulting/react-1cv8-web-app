@@ -1,6 +1,6 @@
 {
   "name": "react-1cv8-web-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React components for 1cv8 WebApp",
   "scripts": {
     "test": "NODE_ENV=test jest",
@@ -27,13 +27,13 @@
   },
   "exports": {
     "types": "./lib/index.d.ts",
-    "require": "./lib/react-1cv8-web-app.cjs",
+    "require": "./lib/react-1cv8-web-app.js",
     "default": "./lib/react-1cv8-web-app.modern.js"
   },
   "files": [
     "/lib"
   ],
-  "main": "lib/react-1cv8-web-app.cjs",
+  "main": "lib/react-1cv8-web-app.js",
   "module": "lib/react-1cv8-web-app.module.js",
   "unpkg": "lib/react-1cv8-web-app.umd.js",
   "types": "lib/index.d.ts",
