@@ -1,0 +1,56 @@
+{
+  "name": "react-1cv8-web-app",
+  "version": "0.0.1",
+  "description": "React components for 1cv8 WebApp",
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "build": "rm -rf ./lib/*; microbundle build --sourcemap=false",
+    "dev": "npm run build && microbundle watch --compress=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IngvarConsulting/react-1cv8-web-app.git"
+  },
+  "keywords": [
+    "react",
+    "webkit",
+    "1cv8"
+  ],
+  "author": "Ingvar Consulting, LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IngvarConsulting/react-1cv8-web-app/issues"
+  },
+  "homepage": "https://github.com/IngvarConsulting/react-1cv8-web-app#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "types": "./lib/index.d.ts",
+    "require": "./lib/react-1cv8-web-app.cjs",
+    "default": "./lib/react-1cv8-web-app.modern.js"
+  },
+  "files": [
+    "/lib"
+  ],
+  "main": "lib/react-1cv8-web-app.cjs",
+  "module": "lib/react-1cv8-web-app.module.js",
+  "unpkg": "lib/react-1cv8-web-app.umd.js",
+  "types": "lib/index.d.ts",
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.2",
+    "@types/react": "^18",
+    "@types/react-test-renderer": "^18.0.0",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
+    "microbundle": "^0.15.1",
+    "react-test-renderer": "^18.2.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
