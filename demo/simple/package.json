@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "react": "^18.3.1",
+    "react-1cv8-web-app": "^0.0.4",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {

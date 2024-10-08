@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react'
+import { V8WebAppProvider, useV8FormAttribute, V8Proxy } from 'react-1cv8-web-app'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [number, setNumber] = useState("")
+  const { getItem, setItem } = useV8FormAttribute()
+  
+  useEffect(() => {
+    getItem('Номер')
+      .then((response) => setNumber(response))
+  })
 
+  const changeNumber = (value: string) => {
+    setItem('Номер', value)
+    setNumber(value)
+  }
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <V8WebAppProvider>
+      <div>Номер: <input onChange={ (e) => changeNumber(e.target.value) }></input></div>
+      <div>Надпись: {number}</div>
+      <button onClick={ () => V8Proxy.fetch('ShowPopUp', { text: 'Текст из JavaScript' }) }>Показать предупреждение</button>
+      <button onClick={ () => V8Proxy.fetch('Text').then(res => alert(res.text())) }>Text</button>
+      <button onClick={ () => V8Proxy.fetch('Json').then(res => alert(res.json())) }>Json</button>
+      <button onClick={ () => V8Proxy.fetch('Blob').then(res => alert(res.blob())) }>Blob</button>
+    </V8WebAppProvider>
   )
 }
 
