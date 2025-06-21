@@ -5,7 +5,7 @@
 Добавьте к проекту библиотку
 
 ```sh
-npm react-1cv8-web-app"
+npm install react-1cv8-web-app
 ```
 
 Используйте импорт
