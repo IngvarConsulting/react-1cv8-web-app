@@ -34,13 +34,10 @@ import { viteSingleFile } from ‘vite-plugin-singlefile’
 
 ```ts
 export default defineConfig({
-plugins: [
-react(),
-
-viteSingleFile()
-
-],
-
+    plugins: [
+        react(),
+        viteSingleFile()
+    ],
 })
 ```
 
@@ -54,7 +51,7 @@ npm run build
 
 ```ts
 build: {
-target: "es2018"
+    target: "es2018"
 }
 ```
 
